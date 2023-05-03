@@ -25,22 +25,25 @@ $paragraph= trim($_GET['text']); //load and clean paragraph from user
 
         <h1>Il risultato</h1>
 
-        <p>La tua frase completa:</p>
+        <h5>La tua frase completa:</h5>
         <p><?php echo $paragraph ?></p>
 
-        <p>Quanto è lunga la tua frase:</p>
+        <h5>Quanto è lunga la tua frase:</h5>
         <p><?php  echo strlen($paragraph); ?></p>
 
-        <p>La tua frase con la parola censurata:</p>
+        <h5>La tua frase con la parola censurata:</h5>
         <p>
-            <?php if(str_contains($paragraph, $word)){
+            <?php if(str_contains($paragraph, $censoredWord)){
                 //se presente sostituisco con gli asterischi
-                $censoredTxt= str_replace($word,' *** ', $paragraph);
-                echo $censoredTxt;
-             }?>
+                $censoredTxt= str_replace($censoredWord,' *** ', $paragraph);
+                
+             }
+             echo $censoredTxt;?>
         </p>
         
     </div>
+
+
         
 
     </main>
