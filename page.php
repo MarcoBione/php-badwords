@@ -1,13 +1,7 @@
 <?php 
 //load main page data
-$word=$_GET['word'];
-$paragraph= $_GET['text'];
-
-//test
-//echo "Ciao " . $word;
-//echo "Ciao " . $paragraph;
-
-
+$censoredWord= trim($_GET['word']); //load and clean word from user
+$paragraph= trim($_GET['text']); //load and clean paragraph from user
 ?>
 
 
@@ -28,16 +22,24 @@ $paragraph= $_GET['text'];
     <main>
 
     <div class="container text-center">
+
         <h1>Il risultato</h1>
 
         <p>La tua frase completa:</p>
         <p><?php echo $paragraph ?></p>
 
-        <p>Quanto è linga la tua frase:</p>
-        <p><?php  echo $strlen($paragraph); ?></p>
+        <p>Quanto è lunga la tua frase:</p>
+        <p><?php  echo strlen($paragraph); ?></p>
 
-        <!-- <p>La tua frase con la parola censurata:</p>
-        <p><?php  ; ?></p> -->
+        <p>La tua frase con la parola censurata:</p>
+        <p>
+            <?php if(str_contains($paragraph, $word)){
+                //se presente sostituisco con gli asterischi
+                $censoredTxt= str_replace($word,' *** ', $paragraph);
+                echo $censoredTxt;
+             }?>
+        </p>
+        
     </div>
         
 

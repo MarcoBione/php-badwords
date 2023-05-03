@@ -1,10 +1,3 @@
-<?php 
-//load form data
-$paragraph='text';
-$word='word';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,28 +13,25 @@ $word='word';
 
 <body>
     <main>
-
     <div class="container">
         <form class="row g-3" action="page.php" method="GET">
-
+            <!-- censored word -->
             <div class="mb-3">
                 <label for="input" class="form-label">Inserisci la parola che vuoi censurare nel
                     testo</label>
                 <input type="text" class="form-control" id="input" placeholder="Censura.." name="word" required>
             </div>
-
+            <!-- text -->
             <div class="mb-3">
                 <label for="txt" class="form-label">Inserisci un testo</label>
                 <textarea class="form-control" id="txt" rows="3" name="text" required></textarea>
             </div>
-
+            <!-- btn for censored text -->
             <div class="col-auto">
                 <button type="submit" class="btn btn-warning mb-3">Censura</button>
             </div>
         </form>
     </div>
-        
-
     </main>
 </body>
 
