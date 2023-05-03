@@ -1,7 +1,7 @@
 <?php 
-
-$paragraph='';
-$word='';
+//load form data
+$paragraph='text';
+$word='word';
 
 ?>
 
@@ -21,24 +21,26 @@ $word='';
 <body>
     <main>
 
-
-        <form class="row g-3">
+    <div class="container">
+        <form class="row g-3" action="page.php" method="GET">
 
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Inserisci la parola che vuoi censurare nel
+                <label for="input" class="form-label">Inserisci la parola che vuoi censurare nel
                     testo</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Censura.." required>
+                <input type="text" class="form-control" id="input" placeholder="Censura.." name="word" required>
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Inserisci un testo</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                <label for="txt" class="form-label">Inserisci un testo</label>
+                <textarea class="form-control" id="txt" rows="3" name="text" required></textarea>
             </div>
 
             <div class="col-auto">
                 <button type="submit" class="btn btn-warning mb-3">Censura</button>
             </div>
         </form>
+    </div>
+        
 
     </main>
 </body>
